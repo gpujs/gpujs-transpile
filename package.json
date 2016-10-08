@@ -2,12 +2,14 @@
 	"name": "gpujs-transpile",
 	"version": "0.0.0",
 	"description": "GPU Accelerated JavaScript - Transpiler",
-	"main": "dist/gpujs-transpile.js",
+	"main": "bin/gpujs-transpile.js",
 	"directories": {
 		"doc": "doc",
 		"test": "test"
 	},
-	"dependencies": {},
+	"dependencies": {
+		
+	},
 	"devDependencies": {
 		"babel-plugin-syntax-async-functions": "^6.5.0",
 		"gulp": "^3.9.1",
