@@ -1,0 +1,25 @@
+{
+	// Compilation options
+	// See: https://www.typescriptlang.org/docs/handbook/compiler-options.html
+	"compilerOptions": {
+		"target": "es5",
+		"module": "commonjs",
+		
+		"sourceMap": true,
+		"removeComments": false,
+		"noLib": false,
+		
+		// Output dir
+		"outDir" : "bin"
+	},
+	
+	// Location to take the typescript from
+	"filesGlob": [
+		"src/**/*.ts",
+		"src/**/*.tsx"
+	],
+	
+	// Compiles the typescript on save
+	"compileOnSave" : true
+	
+}
