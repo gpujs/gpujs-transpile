@@ -2,6 +2,10 @@
 bin/*.js
 doc/*
 
+# Lib files js/css to exclude
+lib/*.js
+lib/*.css
+
 # Logs
 logs
 *.log
