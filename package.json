@@ -1,46 +1,47 @@
 {
-  "name": "gpujs-transpile",
-  "version": "0.0.0",
-  "description": "GPU Accelerated JavaScript - Transpiler",
-  "main": "dist/gpujs-transpile.js",
-  "directories": {
-    "doc": "doc",
-    "test": "test"
-  },
-  "dependencies": {
-    "esprima": "^3.0.0"
-  },
-  "devDependencies": {
-    "merge2": "^0.3.5",
-    "browser-sync": "^2.7.1",
-    "babel-plugin-syntax-async-functions": "^6.5.0",
-    "gulp": "^3.9.1",
-    "gulp-sourcemaps": "^1.5.2",
-    "gulp-typescript": "^2.7.4",
-    "gulp-concat": "^2.6.0",
-    "gulp-header": "^1.7.1",
-    "gulp-rename": "^1.2.2",
-    "gulp-uglify": "^1.5.2",
-    "gulp-util": "^3.0.7"
-  },
-  "scripts": {
-    "unit-tests": "node test/unit-tests.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/gpujs/gpujs-transpile.git"
-  },
-  "keywords": [
-    "gpgpu",
-    "webgl",
-    "gpujs",
-    "transpile"
-  ],
-  "author": "The gpu.js Team - http://gpu.rocks/",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/gpujs/gpu.js/issues"
-  },
-  "homepage": "https://gpu.rocks/"
+	"name": "gpujs-transpile",
+	"version": "0.0.0",
+	"description": "GPU Accelerated JavaScript - Transpiler",
+	"main": "dist/gpujs-transpile.js",
+	"directories": {
+		"doc": "doc",
+		"test": "test"
+	},
+	"dependencies": {
+		"esprima": "^3.0.0"
+	},
+	"devDependencies": {
+		"merge2": "^0.3.5",
+		"browser-sync": "^2.7.1",
+		"babel-plugin-syntax-async-functions": "^6.5.0",
+		"gulp": "^3.9.1",
+		"gulp-sourcemaps": "^1.5.2",
+		"gulp-typescript": "^2.7.4",
+		"gulp-concat": "^2.6.0",
+		"gulp-header": "^1.7.1",
+		"gulp-rename": "^1.2.2",
+		"gulp-uglify": "^1.5.2",
+		"gulp-util": "^3.0.7",
+		"mocha" : "^3.1.2",
+		"chai" : "^3.5.0"
+	},
+	"scripts": {
+		"test": "mocha ./test/test-node.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/gpujs/gpujs-transpile.git"
+	},
+	"keywords": [
+		"gpgpu",
+		"webgl",
+		"gpujs",
+		"transpile"
+	],
+	"author": "The gpu.js Team - http://gpu.rocks/",
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/gpujs/gpu.js/issues"
+	},
+	"homepage": "https://gpu.rocks/"
 }

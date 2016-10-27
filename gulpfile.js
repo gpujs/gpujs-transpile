@@ -11,22 +11,23 @@ gulp.task("bsync", function(){
 		server: {
 			baseDir: "./"
 		},
-		open: false
+		open: true
 	});
 	
 	// Detect change -> rebuild TS
 	gulp.watch(["src/**.ts"], ["tsbuild"]);
 });
 
-
 /// Copy dependencies libraries from /node_modules into /lib
 gulp.task('copy', function() {
 	gulp.src([
 		'node_modules/esprima/dist/esprima.js', 
-		'node_modules/qunitjs/qunit/*'
+		'node_modules/mocha/mocha.js', 
+		'node_modules/mocha/mocha.css', 
+		'node_modules/chai/chai.js', 
+		'node_modules/requirejs/require.js'
 	]).pipe(gulp.dest('lib'));
-})
-
+});
 
 /// Typescript project from config (to load)
 var tsProject = ts.createProject("tsconfig.json", {});
@@ -54,5 +55,5 @@ gulp.task("tsbuild", function() {
 });
 
 /// Default task , setup browser-sync and watch for changes
-gulp.task("default", ["copy"], function() {
+gulp.task("default", ["copy", "bsync"], function() {
 });

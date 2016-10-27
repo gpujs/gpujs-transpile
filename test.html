@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="lib/mocha.css" />
+  <style>
+     #fixture {
+      position: absolute;
+      top: -9999;
+      left: -9999;
+     };
+  </style>
+  <script src="lib/chai.js"></script>
+  <script src="lib/mocha.js"></script>
+  <script> mocha.setup('bdd');</script>
+  <script src="test/test-browser.js"></script>
+  <script>
+    window.onload = function() {
+         mocha.run()
+    };
+  </script>
+ </head>
+<body>
+  <div id="mocha"></div>
+</body>
+</html>
