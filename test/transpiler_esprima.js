@@ -1,11 +1,18 @@
 describe('Esprima based transpiler', function() {
 		it('Sanity Check', function() {
 			assert.ok(transpiler_esprima);
+			assert.ok(new transpiler_esprima());
 			//assert.ok(transpiler_esprima.parse);
 		});
 		
+		var te;
+		before(function() {
+			te = new transpiler_esprima();
+		});
+		
 		describe('VariableDeclaration parsing', function() {
-			// var p = null;
+			
+			// var ac = te.parse("function() { return 42.0; }");
 			// 
 			// // Ensure the remaining test cases run properly if run independently
 			// before(function() {

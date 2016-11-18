@@ -5,6 +5,7 @@ assert = require('chai').assert;
 esprima = require('esprima');
 
 // Esprima based transpiler
+transpiler_base = require('../bin/transpiler_base.js');
 transpiler_esprima = require('../bin/transpiler_esprima.js');
 
 // Setup chai assert
