@@ -3,12 +3,19 @@ declare var esprima:any;
 
 // Typescript dependencies reference
 /// <reference path="transpiler_base.ts"/>
+import transpiler_base from "./transpiler_base";
 
 ///
 /// The core transpiler template
 ///
-class transpiler_esprima extends transpiler_base {
-	
+export default class transpiler_esprima extends transpiler_base {
+
+	/// Blank constructor
+	constructor() {
+		super();
+		// Cause nothing is needed?
+	}
+
 	/// Generates the full AST of the respective implementation
 	///
 	/// @param src    the source code of the function
@@ -20,8 +27,8 @@ class transpiler_esprima extends transpiler_base {
 			range : true
 		} );
 	}
-	
-	/// Prases the abstract syntax tree object, 
+
+	/// Prases the abstract syntax tree object,
 	/// genericially to its respective function
 	///
 	/// @param ast          the AST object to parse
@@ -37,14 +44,14 @@ class transpiler_esprima extends transpiler_base {
 			if( retArr == null ) {
 				retArr = new Array<string>();
 			}
-			
+
 			if (Array.isArray(ast)) {
 				for (var i=0; i<ast.length; i++) {
 					this.ast_generic(ast[i], retArr, astConfig);
 				}
 				return retArr;
 			}
-			
+
 			// switch(ast.type) {
 			// 	case "FunctionDeclaration":
 			// 		return ast_FunctionDeclaration(ast, retArr, funcParam);
@@ -95,9 +102,8 @@ class transpiler_esprima extends transpiler_base {
 			// 	case "CallExpression":
 			// 		return ast_CallExpression(ast, retArr, funcParam);
 			// }
-			
+
 			this.ast_errorOutput("Unknown ast type : "+ast.type, ast, astConfig);
 		}
 	}
-	
 }

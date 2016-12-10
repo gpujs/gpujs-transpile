@@ -13,7 +13,7 @@ gulp.task("bsync", function(){
 		},
 		open: true
 	});
-	
+
 	// Detect change -> rebuild TS
 	gulp.watch(["src/**.ts"], ["tsbuild"]);
 });
@@ -21,37 +21,23 @@ gulp.task("bsync", function(){
 /// Copy dependencies libraries from /node_modules into /lib
 gulp.task('copy', function() {
 	gulp.src([
-		'node_modules/esprima/dist/esprima.js', 
-		'node_modules/mocha/mocha.js', 
-		'node_modules/mocha/mocha.css', 
-		'node_modules/chai/chai.js', 
+		'node_modules/esprima/dist/esprima.js',
+		'node_modules/mocha/mocha.js',
+		'node_modules/mocha/mocha.css',
+		'node_modules/chai/chai.js',
 		'node_modules/requirejs/require.js'
 	]).pipe(gulp.dest('lib'));
 });
 
-/// Typescript project from config (to load)
-var tsProject = ts.createProject("tsconfig.json", {});
-
 /// Typescript building
 gulp.task("tsbuild", function() {
-	
-	// var tsResult = gulp.src("src/_references.ts")
-	// 	.pipe(sourcemaps.init())
-	// 	.pipe(ts(tsProject));
-	// 	
-	// return merge([
-	// 	tsResult.dts.pipe(gulp.dest("dist/")),
-	// 
-	// 	tsResult.js
-	// 	.pipe(sourcemaps.write(".", {
-	// 		includeContent: false,
-	// 		sourceMappingURLPrefix: function(file) {
-	// 		    return '/dist/'
-	// 		},
-	// 		sourceRoot: "../src/"
-	// 	}))
-	// 	.pipe(gulp.dest("dist/"))
-	// ]);
+	// Typescript project from config (to load)
+	return gulp.src('src/**/*.ts')
+		 .pipe(ts({
+			  noImplicitAny: true,
+			  out: 'gpujs-transpile.js'
+		 }))
+		 .pipe(gulp.dest('dist'));
 });
 
 /// Default task , setup browser-sync and watch for changes

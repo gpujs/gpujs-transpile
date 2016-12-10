@@ -6,6 +6,10 @@ Sup-project of GPU.JS - Focusing purely on the language transpilation aspect.
 
 This is written and maintained in typescript format
 
+# Key commands
+
+`npm test` - Run the test engine inside nodejs
+
 # License 
 
 The MIT License
